@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+    <link rel="icon" href="/images/icon.png" type="image/icontype">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/glow.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/client.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>PACMAN</h1>
+        <div id="score">0</div>
+        <div class="user-container">Players: <span>0</span></div>
+        <div class="container">Chatroom:
+            <div class="message-container">
+            <% for(let i in chat){ %>
+                <p class="chat"><span><%= chat[i].name %>:</span> <%= chat[i].msg %></p>
+             <% } %>
+            </div>
+            <form id="form" autocomplete="off">
+                <input type="text" id="message" placeholder="type here.." />
+                <input type="submit" id="submit" value="send" />
+            </form>
+        </div>
+        <div id="game">
+            <div class="game-status"></div>
+        </div>
+        <button id="start-button" class="btn">Press Start</button>
+        <div id="score-board">Scoreboard:</div>
+    </div>
+</body>
+</html>
